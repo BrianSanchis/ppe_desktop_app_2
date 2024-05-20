@@ -65,4 +65,25 @@ public class DAOEmployee {
         }
         return employee;
     }
+    
+    public void updateEmployee(Employee employee) throws SQLException {
+        String SQL = "UPDATE Employees SET Nom = ?, Prenom = ?, DateEmbauche = ?, Poste = ? WHERE Id = ?;";
+        PreparedStatement pstmt = cnx.prepareStatement(SQL);
+        pstmt.setString(1, employee.getNom());
+        pstmt.setString(2, employee.getPrenom());
+        pstmt.setString(3, employee.getDateEmbauche());
+        pstmt.setString(4, employee.getPoste());
+        pstmt.setInt(5, employee.getId());
+        pstmt.executeUpdate();
+    }
+    
+    public void addEmployee(Employee employee) throws SQLException {
+        String SQL = "INSERT INTO Employees (Nom, Prenom, DateEmbauche, Poste) VALUES (?, ?, ?, ?);";
+        PreparedStatement pstmt = cnx.prepareStatement(SQL);
+        pstmt.setString(1, employee.getNom());
+        pstmt.setString(2, employee.getPrenom());
+        pstmt.setString(3, employee.getDateEmbauche());
+        pstmt.setString(4, employee.getPoste());
+        pstmt.executeUpdate();
+    }
 }

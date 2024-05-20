@@ -18,12 +18,13 @@ public class TableModel extends DefaultTableModel{
 	}
 	
 
-	/**
-	 * @return the modifiedCities
-	 */
-	public HashSet<Employee> getModifiedCities() {
-		return modifiedEmployees;
-	}
+	public HashSet<Employee> getModifiedEmployees() {
+        return modifiedEmployees;
+    }
+
+    public List<Employee> getModifiedList() {
+        return modifiedList;
+    }
 
 
 	/**
@@ -53,7 +54,7 @@ public class TableModel extends DefaultTableModel{
 
 	public boolean isCellEditable(int row, int column) {
 		// TODO Auto-generated method stub
-		if(column == 0 || column == 2) {
+		if(column == 0 || column == 2 || column == 3) {
 			return false;
 		}
 		return true;

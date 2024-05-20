@@ -28,6 +28,8 @@ public class HomeFenetre extends JFrame {
 	private JScrollPane scrollPane;
 	private JButton BtnUpdate;
 	private JButton BtnSearch;
+	private JButton btnLogout;
+	private JButton btnAddEmployee;
 
 	/**
 	 * Launch the application.
@@ -69,9 +71,9 @@ public class HomeFenetre extends JFrame {
 		lblSwissGalaxyRh.setBounds(12, 81, 201, 97);
 		panel.add(lblSwissGalaxyRh);
 		
-		JButton btnDeconnexion = new JButton("Deconnexion");
-		btnDeconnexion.setBounds(52, 308, 119, 27);
-		panel.add(btnDeconnexion);
+		btnLogout = new JButton("Deconnexion");
+		btnLogout.setBounds(52, 308, 119, 27);
+		panel.add(btnLogout);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(154, 153, 150));
@@ -93,11 +95,14 @@ public class HomeFenetre extends JFrame {
 		panel_1_1.setBounds(233, 601, 600, 36);
 		contentPane.add(panel_1_1);
 		
-		BtnUpdate = new JButton("Update");
+		BtnUpdate = new JButton("Mettre à jour");
 		BtnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
+		
+		btnAddEmployee = new JButton("Ajouter");
+		panel_1_1.add(btnAddEmployee);
 		panel_1_1.add(BtnUpdate);
 		
 		scrollPane = new JScrollPane();
@@ -178,5 +183,11 @@ public class HomeFenetre extends JFrame {
 	}
 	public JTextField getTextFieldSearch() {
 		return textFieldSearch;
+	}
+	public JButton getBtnLogout() {
+		return btnLogout;
+	}
+	public JButton getBtnAddEmployee() {
+		return btnAddEmployee;
 	}
 }
